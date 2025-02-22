@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  phpVersion: 8.1
+  phpVersion: 8.2
 
 steps:
 - script: |
@@ -35,19 +35,4 @@ steps:
     publishLocation: 'Container'
 
 
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(Build.ArtifactStagingDirectory)'
-    artifact: 'dropper'
-    publishLocation: 'pipeline'
 
-- task: UniversalPackages@0
-  inputs:
-    command: 'publish'
-    publishDirectory: '$(Build.ArtifactStagingDirectory)'
-    feedsToUsePublish: 'internal'
-    vstsFeedPublish: '864dd95f-ea77-4387-92df-6a587ab2a755/dd90e2be-d78f-47c6-917e-918cf0973f26'
-    vstsFeedPackagePublish: 'my-first-package'
-    versionOption: 'custom'
-    versionPublish: '0.0.1'
-    packagePublishDescription: 'welcome'
