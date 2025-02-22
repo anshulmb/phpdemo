@@ -34,5 +34,13 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
-
+- task: UniversalPackages@0
+  inputs:
+    command: 'publish'
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: 'phpfeed'
+    vstsFeedPackagePublish: 'php-package'
+    versionOption: 'custom'
+    versionPublish: '0.0.1'
 
