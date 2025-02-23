@@ -46,3 +46,7 @@ steps:
     vstsFeedPackagePublish: 'php-package'
     versionOption: 'custom'
     versionPublish: '1.0.$(Build.BuildId)'
+- task: WhiteSource@21
+  inputs:
+    cwd: '$(System.DefaultWorkingDirectory)'
+    projectName: 'phpdemo'
