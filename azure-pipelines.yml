@@ -30,13 +30,6 @@ steps:
 
 
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'dropl'
-    publishLocation: 'Container'
-    StoreAsTar: true
-
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(Build.BinariesDirectory)'
